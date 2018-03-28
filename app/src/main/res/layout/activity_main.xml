@@ -7,6 +7,7 @@
     tools:context="me.kamili.rachid.mycalculator.MainActivity">
 
     <TextView
+        android:background="#ddd"
         android:gravity="bottom|end"
         android:textSize="30sp"
         android:padding="20dp"
@@ -17,6 +18,7 @@
         android:layout_height="180px" />
 
     <TextView
+        android:background="#ddd"
         android:gravity="center_vertical|end"
         android:textSize="60sp"
         android:padding="20dp"
@@ -27,98 +29,191 @@
         android:layout_height="190px"
         android:layout_below="@+id/values" />
 
-    <GridLayout
-        android:id="@+id/primaryGrid"
-        android:layout_width="384dip"
-        android:layout_height="384dip"
+    <LinearLayout
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:background="#555"
-        android:columnCount="4"
-        android:rowCount="4">
 
-        <Button
-            android:id="@+id/btn7"
-            style="@style/AppTheme.Button"
-            android:text="7" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <GridLayout
+            android:id="@+id/primaryGrid"
+            android:layout_width="384dip"
+            android:layout_height="384dip"
+            android:background="#555"
+            android:columnCount="4"
+            android:rowCount="4">
 
-        <Button
-            android:id="@+id/btn8"
-            style="@style/AppTheme.Button"
-            android:text="8" />
+            <Button
+                android:id="@+id/btn7"
+                style="@style/AppTheme.Button"
+                android:text="7" />
 
-        <Button
-            android:id="@+id/btn9"
-            style="@style/AppTheme.Button"
-            android:text="9" />
+            <Button
+                android:id="@+id/btn8"
+                style="@style/AppTheme.Button"
+                android:text="8" />
 
-        <Button
-            android:id="@+id/btnDiv"
-            style="@style/AppTheme.Button"
-            android:text="/" />
+            <Button
+                android:id="@+id/btn9"
+                style="@style/AppTheme.Button"
+                android:text="9" />
 
-        <Button
-            android:id="@+id/btn4"
-            style="@style/AppTheme.Button"
-            android:text="4" />
+            <Button
+                android:id="@+id/btnDiv"
+                style="@style/AppTheme.Button"
+                android:text="/" />
 
-        <Button
-            android:id="@+id/btn5"
-            style="@style/AppTheme.Button"
-            android:text="5" />
+            <Button
+                android:id="@+id/btn4"
+                style="@style/AppTheme.Button"
+                android:text="4" />
 
-        <Button
-            android:id="@+id/btn6"
-            style="@style/AppTheme.Button"
-            android:text="6" />
+            <Button
+                android:id="@+id/btn5"
+                style="@style/AppTheme.Button"
+                android:text="5" />
 
-        <Button
-            android:id="@+id/btnMul"
-            style="@style/AppTheme.Button"
-            android:text="*" />
+            <Button
+                android:id="@+id/btn6"
+                style="@style/AppTheme.Button"
+                android:text="6" />
 
-        <Button
-            android:id="@+id/btn1"
-            style="@style/AppTheme.Button"
-            android:text="1" />
+            <Button
+                android:id="@+id/btnMul"
+                style="@style/AppTheme.Button"
+                android:text="*" />
 
-        <Button
-            android:id="@+id/btn2"
-            style="@style/AppTheme.Button"
-            android:text="2" />
+            <Button
+                android:id="@+id/btn1"
+                style="@style/AppTheme.Button"
+                android:text="1" />
 
-        <Button
-            android:id="@+id/btn3"
-            style="@style/AppTheme.Button"
-            android:text="3" />
+            <Button
+                android:id="@+id/btn2"
+                style="@style/AppTheme.Button"
+                android:text="2" />
 
-        <Button
-            android:id="@+id/btnSub"
-            style="@style/AppTheme.Button"
-            android:text="-" />
+            <Button
+                android:id="@+id/btn3"
+                style="@style/AppTheme.Button"
+                android:text="3" />
 
-        <Button
-            android:id="@+id/btnCancel"
-            style="@style/AppTheme.Button"
-            android:onClick="onClickCancel"
-            android:text="C" />
+            <Button
+                android:id="@+id/btnSub"
+                style="@style/AppTheme.Button"
+                android:text="-" />
 
-        <Button
-            android:id="@+id/btn0"
-            style="@style/AppTheme.Button"
-            android:text="0" />
+            <Button
+                android:id="@+id/btnCancel"
+                style="@style/AppTheme.Button"
+                android:onClick="onClickCancel"
+                android:text="C" />
 
-        <Button
-            android:id="@+id/btnEql"
-            style="@style/AppTheme.Button"
-            android:onClick="onClickEqual"
-            android:text="=" />
+            <Button
+                android:id="@+id/btn0"
+                style="@style/AppTheme.Button"
+                android:text="0" />
 
-        <Button
-            android:id="@+id/btnAdd"
-            style="@style/AppTheme.Button"
-            android:text="+" />
+            <Button
+                android:id="@+id/btnEql"
+                style="@style/AppTheme.Button"
+                android:onClick="onClickEqual"
+                android:text="=" />
 
-    </GridLayout>
+            <Button
+                android:id="@+id/btnAdd"
+                style="@style/AppTheme.Button"
+                android:text="+" />
+
+        </GridLayout>
+
+        <GridLayout
+
+            android:id="@+id/sciGrid"
+            android:layout_width="384dip"
+            android:layout_height="384dip"
+            android:background="#666"
+            android:columnCount="4"
+            android:rowCount="4">
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:onClick="onClickDelete"
+                android:text="dl" />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text="(" />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text=")" />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text="pi"
+                android:textAllCaps="false" />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text="cos("
+                android:textAllCaps="false" />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text="sin("
+                android:textAllCaps="false" />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text="tan("
+                android:textAllCaps="false" />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text="%"
+                android:textAllCaps="false" />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text="ln("
+                android:textAllCaps="false" />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text="log("
+                android:textAllCaps="false" />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text="abs("
+                android:textAllCaps="false" />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text="." />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text="min("
+                android:textAllCaps="false" />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text="max("
+                android:textAllCaps="false" />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text="e"
+                android:textAllCaps="false" />
+
+            <Button
+                style="@style/AppTheme.Button"
+                android:text="" />
+
+        </GridLayout>
+    </LinearLayout>
+
 
 </RelativeLayout>

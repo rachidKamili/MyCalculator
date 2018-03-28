@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private Integer screenWidth = 0;
     private Integer screenHeight = 0;
     private GridLayout primaryGrid;
+    private GridLayout sciGrid;
     private TextView tvValues;
     private TextView tvResults;
     private String values = "";
@@ -55,6 +56,15 @@ public class MainActivity extends AppCompatActivity {
         tvValues = findViewById(R.id.values);
         tvResults = findViewById(R.id.results);
         primaryGrid = findViewById(R.id.primaryGrid);
+        sciGrid = findViewById(R.id.sciGrid);
+    }
+
+    private void hideSciGrid() {
+        sciGrid.setVisibility(GridLayout.INVISIBLE);
+    }
+
+    private void showSciGrid() {
+        sciGrid.setVisibility(GridLayout.VISIBLE);
     }
 
     private void setLandscapeSize() {
@@ -65,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
         tvResults.getLayoutParams().height = (screenWidth - layoutParams.height - getStatusBarHeight()) / 2;
         tvValues.getLayoutParams().height = (screenWidth - layoutParams.height - getStatusBarHeight()) / 2;
         primaryGrid.setLayoutParams(layoutParams);
+        sciGrid.setLayoutParams(layoutParams);
+        //showSciGrid();
     }
 
     private void setNormalSize() {
@@ -72,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         primaryGrid.getLayoutParams().width = screenWidth;
         tvResults.getLayoutParams().height = (screenHeight - screenWidth) / 2;
         tvValues.getLayoutParams().height = (screenHeight - screenWidth) / 2;
+        //hideSciGrid();
     }
 
     private void getScreenSizes() {
@@ -117,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 tvResults.setText(evaluator.evaluate(values) + "");
                 results = "" + evaluator.evaluate(values);
             } catch (Exception e) {
-                tvResults.setText("Invalid");
+                tvResults.setText("Invalid expression");
             }
     }
 
@@ -127,4 +140,8 @@ public class MainActivity extends AppCompatActivity {
         setValues();
     }
 
+    public void onClickDelete(View view) {
+        values = values.substring(0,values.length()-1);
+        setValues();
+    }
 }
